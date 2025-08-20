@@ -1,0 +1,466 @@
+/* Estilos personalizados para LegalSync */
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Classes de animação */
+.fade-in-animation {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.8s ease-out;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Estilos para o modal */
+#authModal {
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+#authModal.hiding {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* Estilos para botões de tipo de usuário */
+.user-type-btn {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.user-type-btn:hover {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+.user-type-btn.active {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+.user-type-btn.active i {
+  color: #d97706 !important;
+}
+
+/* Estilos para campos de input */
+.input-field {
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+/* Estilos para cards de especialidades */
+.specialty-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.specialty-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para cards de escritórios */
+.office-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.office-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.office-card img {
+  transition: transform 0.3s ease;
+}
+
+.office-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Estilos para o header */
+header {
+  backdrop-filter: blur(10px);
+  background-color: #e54029 !important;
+  background-image: url('fts/hef3.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Estilos para o footer */
+footer {
+  background-color: #efb421 !important;
+  background-image: url('fts/hef.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white !important;
+}
+
+footer * {
+  color: white !important;
+}
+
+footer a {
+  color: white !important;
+}
+
+footer p {
+  color: white !important;
+}
+
+/* Estilos para o carrossel */
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f59e0b;
+}
+
+/* Estilos para botões */
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Estilos para links */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Estilos para o splash screen */
+#splashScreen {
+  background: linear-gradient(135deg, #fef3c7, #fed7aa);
+  transition: opacity 0.5s ease;
+}
+
+#splashScreen i {
+  filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 0.3));
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero-text {
+    font-size: 1.5rem;
+  }
+  
+  .specialty-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .office-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 1.25rem;
+  }
+  
+  .specialty-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .user-type-btn {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .user-type-btn p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Estilos para estados de loading */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #f59e0b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos para notificações/alertas */
+.alert {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.alert-success {
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.alert-error {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.alert-warning {
+  background-color: #fef3c7;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+}
+
+/* Estilos para tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #374151;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.875rem;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Estilos para scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos para scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d97706;
+}
+
+/* Estilos para focus acessibilidade */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* Estilos para modo escuro (opcional) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .dark-mode header {
+    background-color: rgba(31, 41, 55, 0.95);
+  }
+  
+  .dark-mode .bg-white {
+    background-color: #374151;
+  }
+  
+  .dark-mode .text-gray-800 {
+    color: #f9fafb;
+  }
+  
+  .dark-mode .border-gray-300 {
+    border-color: #4b5563;
+  }
+}
+
+/* Estilos para impressão */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .container {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Estilos para elementos específicos do LegalSync */
+.legal-icon {
+  color: #f59e0b;
+  transition: color 0.3s ease;
+}
+
+.legal-icon:hover {
+  color: #d97706;
+}
+
+.legal-gradient {
+  background: linear-gradient(135deg, #fef3c7, #fed7aa, #fde68a);
+}
+
+.legal-shadow {
+  box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.1), 0 2px 4px -1px rgba(245, 158, 11, 0.06);
+}
+
+.legal-border {
+  border-color: #f59e0b;
+}
+
+/* Animações específicas para elementos jurídicos */
+.scale-animation {
+  transition: transform 0.3s ease;
+}
+
+.scale-animation:hover {
+  transform: scale(1.02);
+}
+
+.rotate-animation {
+  transition: transform 0.3s ease;
+}
+
+.rotate-animation:hover {
+  transform: rotate(5deg);
+}
+
+/* Estilos para badges e status */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-info {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
