@@ -138,7 +138,7 @@
 header {
   backdrop-filter: blur(10px);
   background-color: #e54029 !important;
-  background-image: url('fts/hef3.png');
+  background-image: url('fts/hef4.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -147,7 +147,7 @@ header {
 /* Estilos para o footer */
 footer {
   background-color: #efb421 !important;
-  background-image: url('fts/hef.png');
+  background-image: url('fts/hef4.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
